@@ -1,0 +1,225 @@
+import { Table } from 'antd';
+import { useState } from 'react';
+import { CiCircleInfo } from 'react-icons/ci';
+import { GoLock, GoUnlock } from 'react-icons/go';
+import { Link } from 'react-router-dom';
+import type { TableColumnsType } from 'antd';
+import Searchber from './Searchber';
+import TabList from './TabList';
+
+interface DataType {
+    key: React.Key;
+    no: string;
+    name: string;
+    address: string;
+    price: 'SYP 130,019,000';
+    category: 'Car';
+    date: string;
+
+    sellerName: 'Nadir';
+}
+
+const data = [
+    {
+        key: '1',
+        no: '#24721',
+        name: 'Admin Asadujjaman',
+        address: '3891 Ranchview Dr. Richardson',
+        price: 'SYP 130,019,000',
+        category: 'Bike',
+        date: '2/11/12',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '2',
+        no: '#26552',
+        name: 'Admin Asadujjaman',
+        address: '4517 Washington Ave. Manchester',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '8/30/14',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '3',
+        no: '#24563',
+        name: 'Admin Asadujjaman',
+        address: '3517 W. Gray St. Utica',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '8/2/19',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '4',
+        no: '#2424',
+        name: 'Dr. Anna KOWALSKA',
+        address: '2118 Thornridge Cir. Syracuse',
+        price: 'SYP 130,019,000',
+        category: 'Bike',
+        date: '8/16/13',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '5',
+        no: '#247865',
+        name: "Dr. Michael O'CONNOR",
+        address: '2972 Westheimer Rd. Santa Ana',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '5/19/12',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '6',
+        no: '#24456',
+        name: 'Dr. Yasmin AL-FARSI',
+        address: '2464 Royal Ln. Mesa',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '7/27/13',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '7',
+        no: '#24727',
+        name: 'Dr. Leila BEN AMAR',
+        address: '8502 Preston Rd. Inglewood',
+        price: 'SYP 130,019,000',
+        category: 'Bike',
+        date: '10/6/13',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '8',
+        no: '#24578',
+        name: 'Dr. Elena PETROVA',
+        address: '6391 Elgin St. Celina',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '9/23/16',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '9',
+        no: '#2499',
+        name: 'Dr. Sergei IVANOV',
+        address: '2118 Thornridge Cir. Syracuse',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '12/10/13',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '10',
+        no: '#242310',
+        name: 'Dr. Sofia OLIVEIRA',
+        address: '4140 Parker Rd. Allentown',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '5/30/14',
+        sellerName: 'Nadir',
+    },
+    {
+        key: '11',
+        no: '#249811',
+        name: 'Dr. Ahmed KHAN',
+        address: '3517 W. Gray St. Utica',
+        price: 'SYP 130,019,000',
+        category: 'Car',
+        date: '4/4/18',
+        sellerName: 'Nadir',
+    },
+];
+
+export default function UserList() {
+    const [lock, setLock] = useState<{ [key: string]: boolean }>({});
+    const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+
+    const handleLock = (recordNo: string) => {
+        console.log(`Toggling lock for record: ${recordNo}`);
+        setLock((prev) => ({
+            ...prev,
+            [recordNo]: !prev[recordNo],
+        }));
+    };
+
+    const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
+        console.log('Selected row keys: ', newSelectedRowKeys);
+        setSelectedRowKeys(newSelectedRowKeys);
+    };
+
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: onSelectChange,
+    };
+
+    const columns: TableColumnsType<DataType> = [
+        {
+            title: 'Serial ID',
+            dataIndex: 'no',
+        },
+        {
+            title: 'Car Name',
+            dataIndex: 'name',
+            key: 'name',
+        },
+        {
+            title: 'Address',
+            dataIndex: 'address',
+            key: 'address',
+        },
+        {
+            title: 'Price',
+            dataIndex: 'price',
+            key: 'price',
+        },
+        {
+            title: 'Category',
+            dataIndex: 'category',
+            key: 'category',
+        },
+        {
+            title: 'Sellers Name',
+            dataIndex: 'sellerName',
+            key: 'sellerName',
+        },
+        {
+            title: 'Post Date',
+            dataIndex: 'date',
+            key: 'date',
+        },
+        {
+            title: 'Action',
+            dataIndex: 'action',
+            key: 'action',
+            render: (_: any, record: DataType) => (
+                <div className="flex justify-center items-center gap-2 -ml-8" key={record.no}>
+                    <Link to="/customer-details">
+                        <button className="mt-1">
+                            <CiCircleInfo size={25} className="text-[#6CA0DC]" />
+                        </button>
+                    </Link>
+                    <button className="" onClick={() => handleLock(record.no)}>
+                        {lock[record.no] ? <GoLock size={25} /> : <GoUnlock size={25} className="text-red-400" />}
+                    </button>
+                </div>
+            ),
+        },
+    ];
+
+    return (
+        <div className="bg-[#F9F9F9] rounded-lg mt-6">
+            <TabList />
+
+            <Searchber />
+            <Table
+                //@ts-ignore
+                columns={columns}
+                dataSource={data}
+                rowKey={(record, index) => `${record.no} ${index}`}
+                rowSelection={rowSelection}
+            />
+        </div>
+    );
+}
