@@ -12,8 +12,7 @@ function App() {
                     },
                     components: {
                         Input: {
-                            colorText: '#ffff', // This sets the text color of the input
-                            // You can also customize the border or focus border color here
+                            colorText: '#ffff',
                             hoverBorderColor: '#212526',
                             activeBorderColor: '#212526',
                             hoverBg: '#212526',

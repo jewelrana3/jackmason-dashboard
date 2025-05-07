@@ -124,7 +124,7 @@ export default function Subscriber() {
     };
 
     return (
-        <div className="bg-white rounded-lg">
+        <div className=" rounded-lg">
             {/* <SearchCategory /> */}
             {/* Table with Checkbox Selection */}
             <Table columns={columns} dataSource={data} rowKey={(record) => `${record.key}`} />

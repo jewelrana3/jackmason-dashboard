@@ -3,6 +3,8 @@ import type { TableColumnsType } from 'antd';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { MdOutlineRemoveRedEye } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import { useState } from 'react';
+import UserDetail from '../../../modal/UserDetails';
 
 interface DataType {
     key: React.Key;
@@ -117,6 +119,7 @@ const data = [
 ];
 
 export default function User() {
+    const [UserDetails, setUserDetails] = useState<boolean | null>(null);
     const columns: TableColumnsType<DataType> = [
         {
             title: 'Serial ID',
@@ -153,7 +156,7 @@ export default function User() {
             key: 'action',
             render: (_: any, record: DataType) => (
                 <div className="flex justify-center items-center gap-2 -ml-8" key={record.no}>
-                    <button className="mt-1">
+                    <button className="mt-1" onClick={() => setUserDetails(true)}>
                         <MdOutlineRemoveRedEye size={22} className="text-[#6CA0DC]" />
                     </button>
 
@@ -186,14 +189,15 @@ export default function User() {
     };
 
     return (
-        <div className="bg-white rounded-lg">
-            {/* Table with Checkbox Selection */}
-            <Table
-                columns={columns}
-                dataSource={data}
-                rowKey={(record) => `${record.key}`}
-                // rowSelection={rowSelection}
-            />
-        </div>
+        <>
+            <div className=" rounded-lg">
+                {/* Table with Checkbox Selection */}
+                <Table columns={columns} dataSource={data} rowKey={(record) => `${record.key}`} />
+            </div>
+
+            {/* user details */}
+
+            {UserDetails && <UserDetail isOpen={UserDetails} onClose={() => setUserDetails(null)} />}
+        </>
     );
 }

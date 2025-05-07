@@ -17,16 +17,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.ant-menu-item-selected {
-    background: #3a188a !important;
-    color: white !important;
-    gap: '3px';
-}
-
-.active {
-    background: #2d188a;
-    color: white;
-}
 /* 
 .border-bottom {
     border: 0.6px solid black;

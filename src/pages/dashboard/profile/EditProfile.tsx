@@ -69,7 +69,7 @@ export default function EditProfile() {
                             <div className="mt-3">
                                 <Form.Item name="name" rules={[{ required: true }]}>
                                     <Input
-                                        className="h-12 bg-inputBg hover:bg-inputBg focus:bg-inputBg rounded-xl border-none"
+                                        className="h-12  rounded-xl border-none bg-[#212526] placeholder:text-[#B8B8B8E5]"
                                         placeholder="Enter your name"
                                     />
                                 </Form.Item>
@@ -81,7 +81,7 @@ export default function EditProfile() {
                             <div className="mt-3">
                                 <Form.Item name="email" rules={[{ required: true }]}>
                                     <Input
-                                        className="h-12 bg-inputBg hover:bg-inputBg focus:bg-inputBg rounded-xl border-none"
+                                        className="h-12 rounded-xl border-none bg-[#212526] placeholder:text-[#B8B8B8E5]"
                                         placeholder="Enter your email"
                                     />
                                 </Form.Item>

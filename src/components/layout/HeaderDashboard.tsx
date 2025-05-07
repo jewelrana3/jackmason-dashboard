@@ -14,7 +14,7 @@ const path = [
     { path: '/subscriber', name: 'Subscriber' },
     { path: '/faq', name: 'FAQ' },
 
-    { path: '/terms-condition', name: 'Terms Condition' },
+    { path: '/terms-condition', name: 'Terms & Condition' },
     { path: '/about-us', name: 'About Us' },
     { path: '/privacy-policy', name: 'Privacy Policy' },
     { path: '/notifications', name: 'Notifications' },

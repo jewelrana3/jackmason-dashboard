@@ -34,14 +34,14 @@ export default function ChangePassword() {
                                 ]}
                             >
                                 <Input.Password
-                                    className="h-12 bg-inputBg hover:bg-inputBg focus:bg-inputBg rounded-xl border-none mt-1"
+                                    className="h-12 bg-[#212526] placeholder-textGray rounded-xl border-none mt-1"
                                     placeholder="enter your password "
                                 />
                             </Form.Item>
                             <span className=" text-[20px] font-semibold text-[#B8B8B8]">New Password</span>
                             <Form.Item
                                 name="newPassword"
-                                className="text-black"
+                                className="text-[#B8B8B8]"
                                 rules={[
                                     {
                                         required: true,
@@ -55,14 +55,13 @@ export default function ChangePassword() {
                             >
                                 <Input.Password
                                     placeholder="Enter your password"
-                                    className="h-12 bg-inputBg  hover:bg-inputBg focus:bg-inputBg rounded-xl border-none mt-1"
+                                    className="h-12 bg-[#212526] placeholder:text-[#B8B8B8E5] rounded-xl border-none mt-1"
                                 />
                             </Form.Item>
 
                             <span className=" text-[20px] font-semibold text-[#B8B8B8]">Confirm Password</span>
                             <Form.Item
                                 name="confirmPassword"
-                                className="text-black"
                                 rules={[
                                     {
                                         required: true,
@@ -71,8 +70,8 @@ export default function ChangePassword() {
                                 ]}
                             >
                                 <Input.Password
+                                    className="h-12 bg-[#212526] placeholder:text-[#B8B8B8E5] rounded-xl border-none mt-1"
                                     placeholder="Enter your password"
-                                    className="h-12 bg-inputBg focus:bg-red-500 rounded-xl border-none mt-1"
                                 />
                             </Form.Item>
                             <Form.Item>

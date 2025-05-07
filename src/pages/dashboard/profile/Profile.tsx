@@ -56,11 +56,11 @@ export default function Profile() {
                     <ConfigProvider
                         theme={{
                             components: {
-                                Input: {
-                                    hoverBg: 'rgb(207,49,49)',
-                                    activeBg: 'rgb(139,83,83)',
-                                    colorText: 'rgb(82,196,26)',
-                                },
+                                // Input: {
+                                //     hoverBg: 'rgb(207,49,49)',
+                                //     activeBg: 'rgb(139,83,83)',
+                                //     colorText: 'rgb(82,196,26)',
+                                // },
                             },
                         }}
                     >
@@ -70,8 +70,8 @@ export default function Profile() {
                                 <div className="mt-3 ">
                                     <Form.Item name="name" rules={[{ required: true }]}>
                                         <Input
-                                            className="h-12 rounded-xl border-none"
-                                            placeholder="enter your name"
+                                            className="h-12 rounded-xl border-none bg-[#212526] placeholder:text-[#B8B8B8E5]"
+                                            placeholder="Enter your name"
                                             // readOnly
                                         />
                                     </Form.Item>
@@ -83,8 +83,8 @@ export default function Profile() {
                                 <div className="mt-3">
                                     <Form.Item name="email" rules={[{ required: true }]}>
                                         <Input
-                                            className="h-12 bg-[#212526] rounded-xl border-none"
-                                            placeholder="enter your gmail"
+                                            className="h-12 bg-[#212526] rounded-xl border-none placeholder:text-[#B8B8B8E5]"
+                                            placeholder="Enter your gmail"
                                             // readOnly
                                         />
                                     </Form.Item>

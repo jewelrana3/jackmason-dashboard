@@ -5,7 +5,7 @@ export default {
         extend: {
             colors: {
                 textGray: '#B8B8B8E5',
-
+                placeholder: '#B8B8B8E5',
                 textCategory: '#ABABAB',
                 textGolden: '#DBCC93',
                 textBuyer: '#3A99D9',
