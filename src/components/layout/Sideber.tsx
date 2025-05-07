@@ -24,6 +24,9 @@ const settings = [
         icon: <CiSettings size={24} />,
         path: '',
         children: [
+            { label: 'Profile', path: '/profile', icon: <LuFileSliders size={22} /> },
+            { label: 'Edit Profle', path: '/edit-profile', icon: <LuFileSliders size={22} /> },
+            { label: 'Change Password', path: '/change-password', icon: <LuFileSliders size={22} /> },
             { label: 'About Us', path: '/about-us', icon: <LuFileSliders size={22} /> },
             { label: 'Privacy & Policy', path: '/privacy-policy', icon: <PiNoteDuotone size={22} /> },
             { label: 'Terms & Condition', path: '/terms-condition', icon: <TbNotes size={22} /> },
@@ -51,7 +54,7 @@ const Sidebar = () => {
                         <div
                             onClick={() => setActiveMenu(item.path)}
                             key={item.path}
-                            className={activeMenu === item.path ? 'bg-[#188a50] rounded-r-full text-white w-[90%]' : ''}
+                            className={activeMenu === item.path ? 'bg-[#FFB953] rounded-r-lg w-[4%] text-nowrap' : ''}
                         >
                             <Link className={`flex items-center gap-4  p-6 py-2`} to={item.path}>
                                 <span>{item.icon}</span>
@@ -85,7 +88,7 @@ const Sidebar = () => {
                                     onClick={() => setActiveMenu(child.path)}
                                     className={
                                         activeMenu === child.path
-                                            ? 'bg-[#188a50] rounded-r-full text-white w-[90%]'
+                                            ? 'bg-[#FFB953] rounded-r-full  w-[3%] text-nowrap'
                                             : ''
                                     }
                                 >

@@ -12,7 +12,12 @@ function App() {
                     },
                     components: {
                         Input: {
-                            borderRadius: 40,
+                            colorText: '#ffff', // This sets the text color of the input
+                            // You can also customize the border or focus border color here
+                            hoverBorderColor: '#212526',
+                            activeBorderColor: '#212526',
+                            hoverBg: '#212526',
+                            activeBg: '#212526',
                         },
                         Table: {
                             headerColor: '#B8B8B8',
@@ -25,7 +30,7 @@ function App() {
                             fontFamily: 'Poppins',
                         },
                         Select: {
-                            colorBgContainer: '#F4F4F4',
+                            colorBgContainer: '#212526',
                             hoverBorderColor: '',
                             activeBorderColor: '',
                             // fontSize: 16,

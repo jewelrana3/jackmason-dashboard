@@ -6,8 +6,6 @@ import Button from '../components/shared/Button';
 interface DataType {
     key: string;
     name: string;
-    image: string;
-    code: string;
 }
 
 interface PakageModalProps {
@@ -16,7 +14,7 @@ interface PakageModalProps {
     edit: DataType | null;
 }
 
-export default function Slider1Modal({ edit, isOpen, onClose }: PakageModalProps) {
+export default function CategoryModal({ edit, isOpen, onClose }: PakageModalProps) {
     const [form] = Form.useForm();
 
     useEffect(() => {

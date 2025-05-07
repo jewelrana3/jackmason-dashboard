@@ -1,127 +1,104 @@
-import { useState } from 'react';
-import { Input, Form, DatePicker, Select } from 'antd';
-import Button from '../../../components/shared/Button';
+import { Form, Input, Avatar } from 'antd';
 import { BiUpload } from 'react-icons/bi';
+import Button from '../../../components/shared/Button';
 
-const EditProfile = () => {
+interface formValues {
+    name: string;
+    email: string;
+    profile: string;
+}
+
+export default function EditProfile() {
+    // const [selectedImage, setSelectedImage] = useState(null);
+    // const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
     const [form] = Form.useForm();
-    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-
-    const onFinish = (values: string) => {
-        const formData = new FormData();
-        if (previewUrl) {
-            formData.append('image', previewUrl);
-        }
-        console.log(formData);
-        console.log(values);
-    };
-
-    const onChange = (values: string) => {
+    const onFinish = async (values: formValues) => {
         console.log(values);
     };
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (file) {
-            console.log('File selected:', file);
-            setPreviewUrl(URL.createObjectURL(file));
-        }
+        // const file = e.target.files?.[0];
+        // //@ts-ignore
+        // setSelectedImage(file);
+        // if (file) {
+        //     setPreviewUrl(URL.createObjectURL(file));
+        // }
+        // form.setFieldsValue({
+        //     profile: file?.name,
+        // });
     };
 
     return (
-        <div className="form-container bg-white px-10 rounded-lg pt-4">
-            <span className="text-[#636363] pb-6">Profile Image</span>
-            <div className="border border-[#E0E0E0] w-96 p-4 text-center rounded-lg mt-2">
-                <input
-                    type="file"
-                    name="file"
-                    id="file"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                    className="hidden"
-                />
-                <div
-                    className="flex justify-center items-center rounded-full cursor-pointer"
-                    onClick={() => document.getElementById('file')?.click()}
-                >
-                    {previewUrl ? (
-                        <img src={previewUrl} alt="pic" />
-                    ) : (
-                        <div className="">
-                            <span className="">
-                                <BiUpload size={24} className="ml-10" />
-                            </span>
-                            <span className="text-[#636363]">Upload Image</span>
+        <div className="overflow-hidden text-[#B8B8B8]">
+            <div className="w-[1035px] mx-auto">
+                <div className="flex justify-between space-x-6 mt-12">
+                    <div className="flex gap-4">
+                        <div>
+                            <Avatar
+                                className="border border-white"
+                                size={100}
+                                src="https://i.ibb.co.com/2YWbmYtm/df96ee07b3ad8cfad69be782cb4a27ca.jpg"
+                            />
                         </div>
-                    )}
+                        <div className="flex items-center gap-10 relative">
+                            <h3 className="font-semibold text-2xl">Jahid</h3>
+
+                            <div className="">
+                                <input
+                                    type="file"
+                                    name="file"
+                                    id="file"
+                                    accept="image/*"
+                                    onChange={handleImageChange}
+                                    className="hidden"
+                                />
+
+                                <div className="w-[28px] h-[28px] flex items-center justify-center rounded-full cursor-pointer absolute -ml-36 mt-4 bg-slate-400 text-white">
+                                    <BiUpload size={20} onClick={() => document.getElementById('file')?.click()} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-5">
+                    <Form form={form} onFinish={onFinish} layout="vertical">
+                        <div>
+                            <span className="text-[20px] font-semibold text-[#B8B8B8]">Name</span>
+                            <div className="mt-3">
+                                <Form.Item name="name" rules={[{ required: true }]}>
+                                    <Input
+                                        className="h-12 bg-inputBg hover:bg-inputBg focus:bg-inputBg rounded-xl border-none"
+                                        placeholder="Enter your name"
+                                    />
+                                </Form.Item>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span className="text-[20px] font-semibold text-[#B8B8B8]">Email</span>
+                            <div className="mt-3">
+                                <Form.Item name="email" rules={[{ required: true }]}>
+                                    <Input
+                                        className="h-12 bg-inputBg hover:bg-inputBg focus:bg-inputBg rounded-xl border-none"
+                                        placeholder="Enter your email"
+                                    />
+                                </Form.Item>
+                            </div>
+                        </div>
+
+                        <div className="mt-6">
+                            <Button
+                                htmlType="submit"
+                                className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black font-bold text-lg px-6  rounded-full transform transition-all duration-300 ease-in-out 0.5s ease hover:from-orange-400 w-full mt-4 "
+                            >
+                                Save & Change
+                            </Button>
+                        </div>
+                    </Form>
                 </div>
             </div>
-            <Form form={form} onFinish={onFinish} layout="vertical" className="text-[#606060] font-medium mt-5">
-                <div className="grid grid-cols-2 gap-5">
-                    <div>
-                        <span>name</span>
-                        <Form.Item name="name" rules={[{ required: true, message: 'Please enter name' }]}>
-                            <Input placeholder="Enter name" className="rounded-md h-10" />
-                        </Form.Item>
-                    </div>
-                    <div>
-                        <span>Date of Birth</span>
-                        <Form.Item name="Date of Birth" rules={[{ required: true, message: 'Please date of birth' }]}>
-                            <DatePicker className="w-full h-10 cursor-pointer" />
-                        </Form.Item>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-5">
-                    <div>
-                        <span>Contact Number</span>
-                        <Form.Item name="contact" rules={[{ required: true, message: 'Please enter contact number' }]}>
-                            <Input placeholder="Enter contact number" className="rounded-md h-10" />
-                        </Form.Item>
-                    </div>
-
-                    <div>
-                        <span>Gender</span>
-                        <Form.Item name="gender" rules={[{ required: true, message: 'Please enter admin type' }]}>
-                            <Select onChange={onChange} className="h-10">
-                                <Select.Option value="male">Male</Select.Option>
-                                <Select.Option value="male">Famale</Select.Option>
-                            </Select>
-                        </Form.Item>
-                    </div>
-                </div>
-                <div className="grid grid-cols-2 gap-5">
-                    <div>
-                        <span>Id No</span>
-                        <Form.Item name="id" rules={[{ required: true, message: 'Please enter contact number' }]}>
-                            <Input placeholder="Enter contact number" className="rounded-md h-10" />
-                        </Form.Item>
-                    </div>
-
-                    <div>
-                        <span>Adress</span>
-                        <Form.Item name="address" rules={[{ required: true, message: 'Please enter address' }]}>
-                            <Input placeholder="Enter address" className="rounded-md h-10" />
-                        </Form.Item>
-                    </div>
-                </div>
-
-                <div className="flex justify-center items-center">
-                    <Form.Item className="mt-5">
-                        <Button
-                            style={{ fontFamily: 'Poppins' }}
-                            //@ts-ignore
-                            type="primary"
-                            htmlType="submit"
-                            className="bg-[#6DBD44] rounded-xl h-[44px]"
-                        >
-                            Save & Change
-                        </Button>
-                    </Form.Item>
-                </div>
-            </Form>
         </div>
     );
-};
-
-export default EditProfile;
+}

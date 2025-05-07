@@ -1,6 +1,5 @@
 import { ConfigProvider, Form, Input } from 'antd';
 import { useNavigate } from 'react-router';
-import forgots from '../../../public/auth/forgot.svg';
 import Button from '../../components/shared/Button';
 
 const ForgetPassword = () => {
@@ -28,15 +27,9 @@ const ForgetPassword = () => {
                 },
             }}
         >
-            <div
-                className="
-            flex items-center justify-center h-screen"
-            >
-                <div className="flex items-center justify-center px-6">
+            <div className="flex items-center justify-center h-screen text-[#B8B8B8]">
+                <div className="flex items-center justify-center p-6 bg-[#212526] rounded-md">
                     <div className="w-[500px]">
-                        <div className="flex items-center justify-center">
-                            <img src="/logo.svg" alt="logo" className="w-24" />
-                        </div>
                         <div className=" space-y-3 text-center my-7">
                             <h1 className="text-3xl  font-medium mt-2">Forget Password</h1>
                             <p className="">Please enter your email for verification</p>
@@ -49,25 +42,23 @@ const ForgetPassword = () => {
                             initialValues={{ remember: true }}
                             onFinish={onFinish}
                         >
-                            <Form.Item
-                                name="email"
-                                label="Email"
-                                rules={[{ required: true, message: 'Please input your email!' }]}
-                            >
-                                <Input placeholder="Enter your email address" type="email" className="h-12 bg-white" />
+                            <span className="text-[#B8B8B8] text-xl">Email</span>
+                            <Form.Item name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
+                                <Input
+                                    placeholder="Enter your email address"
+                                    type="email"
+                                    className="h-12 bg-white mt-2"
+                                />
                             </Form.Item>
 
-                            <Form.Item>
-                                <Button htmlType="submit" className="w-full bg-authBg text-[#000000] rounded-md">
-                                    Send OTP
-                                </Button>
-                            </Form.Item>
+                            <Button
+                                htmlType="submit"
+                                className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black font-bold text-lg px-6  rounded-full transform transition-all duration-300 ease-in-out 0.5s ease hover:from-orange-400 w-full mt-4 "
+                            >
+                                GET OTP
+                            </Button>
                         </Form>
                     </div>
-                </div>
-
-                <div className=" px-5">
-                    <img src={forgots} width={460} height={460} alt="forgot" />
                 </div>
             </div>
         </ConfigProvider>

@@ -8,19 +8,12 @@ const { Header } = Layout;
 
 const path = [
     { path: '/', name: 'Analytics' },
-    { path: '/user', name: 'user' },
-    { path: '/post-list', name: 'Post List' },
-    { path: '/customer-details', name: 'Customer Profile' },
-    { path: '/post-details', name: 'Post Details' },
-    { path: '/buyer-registration', name: 'Buyer Registration' },
-    { path: '/all-details', name: 'All Details' },
-    { path: '/seller-transection', name: 'Sellers Transection' },
-    { path: '/package', name: 'Package Setting' },
-    { path: '/transection-details', name: 'Transection Details' },
-    { path: '/slider1', name: 'Slider 1' },
-    { path: '/slider2', name: 'Slider 2' },
+    { path: '/user', name: 'User' },
+    { path: '/venue-list', name: 'Venue List' },
+    { path: '/category', name: 'Category' },
+    { path: '/subscriber', name: 'Subscriber' },
+    { path: '/faq', name: 'FAQ' },
 
-    { path: '/work-functionality', name: 'Work Functionality' },
     { path: '/terms-condition', name: 'Terms Condition' },
     { path: '/about-us', name: 'About Us' },
     { path: '/privacy-policy', name: 'Privacy Policy' },
@@ -28,7 +21,6 @@ const path = [
     { path: '/profile', name: 'Profile' },
     { path: '/edit-profile', name: 'Edit Profile' },
     { path: '/change-password', name: 'Change Password' },
-    { path: '/manage-admin', name: 'Manage Admin' },
 ];
 
 const HeaderDashboard = () => {

@@ -4,39 +4,31 @@ import { useState } from 'react';
 import { LiaEditSolid } from 'react-icons/lia';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { FiPlus } from 'react-icons/fi';
-import Slider1Modal from '../../../modal/Slider1Modal';
 import Swal from 'sweetalert2';
+import CategoryModal from '../../../modal/CategoryModal';
 
 interface DataType {
     key: string;
     name: string;
-    image: string;
-    code: string;
 }
 
 const data: DataType[] = [
     {
         key: '1',
         name: 'Title name 1',
-        image: 'https://i.ibb.co/Nn1R60c/image-map-usa-filled-stars-600nw-2005076390.webp',
-        code: '1234',
     },
     {
         key: '2',
         name: 'Title name 2',
-        image: 'https://i.ibb.co/Nn1R60c/image-map-usa-filled-stars-600nw-2005076390.webp',
-        code: '5645',
     },
     {
         key: '3',
         name: 'Title name 3',
-        image: 'https://i.ibb.co/Nn1R60c/image-map-usa-filled-stars-600nw-2005076390.webp',
-        code: '3444',
     },
 ];
 
-export default function Slider1() {
-    const [slider1, setSlider1] = useState(false);
+export default function Category() {
+    const [modal, setModal] = useState<boolean | null>(null);
     const [edit, setEdit] = useState<DataType | null>(null);
 
     const handleDelete = () => {
@@ -63,30 +55,30 @@ export default function Slider1() {
         {
             title: 'Serial ID',
             key: 'serial',
-            render: (_text, _record, index) => index + 1, // ✅ Serial number without relying on data
+            render: (_text, _record, index) => index + 1,
         },
         {
-            title: 'Category Name',
+            title: <span className="flex justify-center">Category Name</span>,
             dataIndex: 'name',
             key: 'name',
-            // render: (text: string) => <a>{text}</a>,
+            render: (text: string) => <span className="flex justify-center">{text}</span>,
         },
 
         {
-            title: 'Action',
+            title: <span className="flex justify-end px-20">Action</span>,
             key: 'action',
             render: (_, record) => (
-                <div className="flex gap-5">
+                <div className="flex justify-end gap-5 px-20">
                     <button
                         onClick={() => {
-                            setSlider1(true);
+                            setModal(true);
                             setEdit(record);
                         }}
                     >
                         <LiaEditSolid className="text-[#5C5C3D] text-[22px] cursor-pointer" />
                     </button>
                     <button onClick={handleDelete}>
-                        <RiDeleteBin6Line className=" text-[22px] cursor-pointer" />
+                        <RiDeleteBin6Line className=" text-[22px] cursor-pointer text-red-500" />
                     </button>
                 </div>
             ),
@@ -97,7 +89,7 @@ export default function Slider1() {
         <div className=" rounded-2xl">
             <div className="flex items-center justify-end p-2">
                 <button
-                    onClick={() => setSlider1(true)}
+                    onClick={() => setModal(true)}
                     className="flex items-center gap-2 bg-bgBlack px-4 py-4 rounded-2xl font-medium shadow-sm "
                 >
                     <span className="">
@@ -111,13 +103,13 @@ export default function Slider1() {
             <Table<DataType> columns={columns} dataSource={data} pagination={false} />
 
             {/* modal */}
-            {slider1 && (
+            {modal && (
                 //@ts-ignore
-                <Slider1Modal
+                <CategoryModal
                     edit={edit}
-                    isOpen={slider1}
+                    isOpen={modal}
                     onClose={() => {
-                        setSlider1(false), setEdit(null);
+                        setModal(null), setEdit(null);
                     }}
                 />
             )}

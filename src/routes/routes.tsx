@@ -13,7 +13,6 @@ import ChangePassword from '../pages/dashboard/profile/ChangePassword';
 import Profile from '../pages/dashboard/profile/Profile';
 import TermsCondition from '../pages/dashboard/TermsCondition';
 import PostList from '../pages/dashboard/category/Category';
-import BuyerRegistration from '../pages/dashboard/buyerRegistration/BuyerRegistration';
 import AboutUS from '../pages/dashboard/AboutUs';
 import User from '../pages/dashboard/user/User';
 import VenueList from '../pages/dashboard/venueList/VenueList';
@@ -30,9 +29,6 @@ const router = createBrowserRouter([
             { path: 'user', element: <User /> },
             { path: 'venue-list', element: <VenueList /> },
             { path: 'category', element: <PostList /> },
-            // { path: 'post-details', element: <PostDetails /> },
-            { path: 'buyer-registration', element: <BuyerRegistration /> },
-            // { path: 'all-details', element: <AllDetails /> },
             { path: 'subscriber', element: <Subscriber /> },
             { path: 'faq', element: <FAQ /> },
 

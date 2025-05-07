@@ -28,16 +28,28 @@ export default function Chart() {
 
     return (
         <div className="my-4 bg-[#212526] shadow-md rounded-lg px-3 pt-1 text-textGray">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between my-4">
                 <h1 className="">Total user statics</h1>
-                <Select value={selectedYear} onChange={handleYearChange} className="w-32 h-[40px] mt-2">
-                    <Option value="2025">2025</Option>
-                    <Option value="2026">2026</Option>
-                    <Option value="2027">2027</Option>
-                    <Option value="2028">2028</Option>
-                    <Option value="2029">2029</Option>
-                    <Option value="2030">2030</Option>
-                </Select>
+                <div className="flex justify-center items-center gap-7">
+                    <div className="text-[#B8B8B8] flex justify-center items-center gap-2">
+                        <p className="h-3 w-3 bg-[#B8B8B8] rounded-full"></p>
+                        <h1>User</h1>
+                    </div>
+                    <div className="text-[#8DB501] flex justify-center items-center gap-2">
+                        <p className="h-3 w-3 bg-[#8DB501] rounded-full"></p>
+                        <h1>Service Provider</h1>
+                    </div>
+                    <div>
+                        <Select value={selectedYear} onChange={handleYearChange} className="w-32 h-[30px] bg-black">
+                            <Option value="2025">2025</Option>
+                            <Option value="2026">2026</Option>
+                            <Option value="2027">2027</Option>
+                            <Option value="2028">2028</Option>
+                            <Option value="2029">2029</Option>
+                            <Option value="2030">2030</Option>
+                        </Select>
+                    </div>
+                </div>
             </div>
             <ResponsiveContainer width="100%" height={260}>
                 <BarChart
@@ -56,8 +68,8 @@ export default function Chart() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="pv" fill="#8884d8" />
-                    <Bar dataKey="uv" fill="#82ca9d" />
+                    <Bar dataKey="pv" fill="#B8B8B8" />
+                    <Bar dataKey="uv" fill="#8DB501" />
                 </BarChart>
             </ResponsiveContainer>
         </div>

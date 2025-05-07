@@ -46,7 +46,7 @@ export default function Post() {
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                    <Line connectNulls type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                    <Line connectNulls type="monotone" dataKey="uv" stroke="#8DB501" fill="#414141" />
                 </LineChart>
             </ResponsiveContainer>
         </div>

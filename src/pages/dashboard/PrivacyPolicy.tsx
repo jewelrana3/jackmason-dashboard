@@ -1,12 +1,10 @@
-import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import { useRef, useState } from 'react';
 import JoditEditor from 'jodit-react';
-import { useNavigate } from 'react-router-dom';
+
 import Button from '../../components/shared/Button';
 
-export default function PrivacyPolicy() {
+export default function AboutUS() {
     const editor = useRef(null);
-    const navigate = useNavigate();
 
     const [content, setContent] = useState('');
 
@@ -14,30 +12,26 @@ export default function PrivacyPolicy() {
         console.log(value);
     };
     return (
-        <div className="bg-white">
-            <div
-                className="flex items-center gap-4 font-semibold text-[20px] text-textGray my-5"
-                onClick={() => navigate(-1)}
-            >
-                <button className="text-xl">
-                    <MdOutlineArrowBackIosNew />
-                </button>
-                <button>Privacy & Policy</button>
-            </div>
-
-            <div className="">
+        <>
+            <div className="bg-black">
                 <div className="">
                     <JoditEditor
+                        className="border-none bg-black"
                         ref={editor}
                         value={content}
-                        config={{ height: 550, theme: 'light', readonly: false }}
+                        config={{ height: 550, theme: 'dark', readonly: false }}
                         onBlur={(newContent) => setContent(newContent)}
                     />
                 </div>
-                <Button onClick={() => handleOnSave(content)} className="mt-5 w-[10%]">
-                    Save & Change
-                </Button>
             </div>
-        </div>
+
+            <Button
+                onClick={() => handleOnSave(content)}
+                htmlType="submit"
+                className="bg-gradient-to-r from-yellow-300 to-orange-400  font-bold text-lg px-6  rounded-full transform transition-all duration-300 ease-in-out 0.5s ease hover:from-orange-400 w-full mt-4 text-black"
+            >
+                Save
+            </Button>
+        </>
     );
 }

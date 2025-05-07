@@ -18,13 +18,13 @@ body {
 }
 
 .ant-menu-item-selected {
-    background: #188a50 !important;
+    background: #3a188a !important;
     color: white !important;
     gap: '3px';
 }
 
 .active {
-    background: #188a50;
+    background: #2d188a;
     color: white;
 }
 /* 

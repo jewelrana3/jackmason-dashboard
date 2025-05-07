@@ -1,4 +1,6 @@
-import { Accordion, AccordionItem } from '@szhsin/react-accordion';
+import { useRef, useState } from 'react';
+import { GoPlus } from 'react-icons/go';
+import { HiMinus } from 'react-icons/hi';
 
 const data = [
     {
@@ -27,17 +29,45 @@ const data = [
     },
 ];
 
-export default function FAQ() {
+const Faq = () => {
+    const [openId, setOpenId] = useState<number | null>(null);
+    const contentRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
+
+    const toggleAccordion = (id: number) => {
+        setOpenId(openId === id ? null : id);
+    };
+
     return (
-        <div className="max-w-4xl mx-auto mt-10 px-4 text-white">
-            <h1 className="text-3xl font-semibold mb-6">FAQ</h1>
-            {data.map((item) => (
-                <Accordion className="w-full">
-                    <AccordionItem key={item.id} header={item.title} className=" mb-2 rounded-md bg-gray-800 p-2">
-                        <div className="text-gray-300 mt-5">{item.content}</div>
-                    </AccordionItem>
-                </Accordion>
+        <div className="mb-5 bg-transparent duration-500 border-b-2 border-[#1A1A1A]">
+            {data?.map((item) => (
+                <div key={item.id}>
+                    <div
+                        className="flex justify-between items-center gap-5 p-2 cursor-pointer duration-500 bg-[#212526] my-2 rounded-md text-[#B8B8B8]"
+                        onClick={() => toggleAccordion(item.id)}
+                    >
+                        <h3 className=" text-[18px] font-normal leading-[30px]">{item.title}</h3>
+                        {openId === item.id ? (
+                            <HiMinus className="text-base md:text-lg lg:text-4xl duration-500 " />
+                        ) : (
+                            <GoPlus className="text-base md:text-lg lg:text-4xl duration-500" />
+                        )}
+                    </div>
+                    <div
+                        ref={(el) => (contentRefs.current[item.id] = el)}
+                        style={{
+                            height: openId === item.id ? `${contentRefs.current[item.id]?.scrollHeight}px` : '0px',
+                            overflow: 'hidden',
+                            transition: 'height 0.5s ease',
+                        }}
+                    >
+                        <p className="p-4 bg-transparent text-base-color duration-500 text-sm md:text-base  rounded-bl rounded-br text-[#B8B8B8]">
+                            {item.content}
+                        </p>
+                    </div>
+                </div>
             ))}
         </div>
     );
-}
+};
+
+export default Faq;

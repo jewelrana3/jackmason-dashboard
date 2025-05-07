@@ -1,16 +1,9 @@
 import { ConfigProvider, Form, Input } from 'antd';
-
 import { useNavigate } from 'react-router-dom';
-import otp from '../../../public/auth/otp.svg';
 import Button from '../../components/shared/Button';
-
-// import Swal from 'sweetalert2';
 
 const VerifyOtp = () => {
     const navigate = useNavigate();
-
-    // const handleResendCode = async () => {
-    // };
 
     const onFinish = async (values: { otp: number | null }) => {
         console.log(values);
@@ -33,25 +26,12 @@ const VerifyOtp = () => {
                 },
             }}
         >
-            <div
-                className="
-            flex items-center justify-center h-screen"
-            >
-                <div className="px-5">
-                    <img src={otp} width={460} height={460} alt="forgot" />
-                </div>
-                <span className="border-r-2 border-white h-[600px]"></span>
-                <div className="flex  items-center justify-center pl-8">
+            <div className="flex items-center justify-center h-screen ">
+                <div className="flex  items-center justify-center pl-8 bg-[#212526] rounded-md px-2">
                     <div className=" w-[500px]">
-                        <div className="flex items-center justify-center ">
-                            <img src="/logo.svg" alt="logo" className="w-24" />
-                        </div>
-                        <div className=" space-y-3 text-center my-10">
+                        <div className=" space-y-3 text-center my-10 text-[#B8B8B8]">
                             <h1 className="text-3xl  font-medium  mt-2">Verify OTP</h1>
-                            <p className="text-[#757575]">
-                                We sent a reset link to contact@dscode...com <br /> enter 5 digit code that is mentioned
-                                in the email
-                            </p>
+                            <p className="">Please check your email. We have sent a code to contact @gmail.com</p>
                         </div>
 
                         <Form
@@ -76,13 +56,14 @@ const VerifyOtp = () => {
                                 />
                             </Form.Item>
 
-                            <Form.Item>
-                                <Button className="bg-bgYellow w-full rounded-md text-[#181818]" htmlType="submit">
-                                    Verify
-                                </Button>
-                            </Form.Item>
+                            <Button
+                                htmlType="submit"
+                                className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black font-bold text-lg px-6  rounded-full transform transition-all duration-300 ease-in-out 0.5s ease hover:from-orange-400 w-full mt-4 "
+                            >
+                                Verify
+                            </Button>
 
-                            <div className="text-lg flex items-center justify-between gap-2 mb-8">
+                            <div className="text-lg flex items-center justify-between gap-2 mb-8 text-[#B8B8B8] px-4">
                                 <p style={{ fontFamily: 'Poppins' }} className="">
                                     Didn't receive the code?
                                 </p>

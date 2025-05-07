@@ -13,7 +13,7 @@ export default function Button({ children, className, onClick, style, htmlType =
                 style={style}
                 type={htmlType}
                 onClick={onClick} // Passing the onClick handler here
-                className={`${className} text-white text-center my-auto cursor-pointer  w-[180px] h-[45px] rounded-lg text-base font-poppins `}
+                className={`${className} text-center my-auto cursor-pointer  w-[180px] h-[45px] rounded-md text-base font-poppins `}
             >
                 {children}
             </button>
