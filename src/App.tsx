@@ -13,9 +13,9 @@ function App() {
                     components: {
                         Input: {
                             colorText: '#B8B8B8E5',
-                            hoverBorderColor: 'white',
+                            hoverBorderColor: '#212526',
                             activeBorderColor: '#212526',
-                            activeBg: '',
+                            activeBg: '#212526',
                             hoverBg: '#212526',
                         },
                         Table: {
@@ -26,7 +26,7 @@ function App() {
                             headerSplitColor: '',
                             borderColor: '#B8B8B8E5',
                             padding: 12,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Nunito',
                         },
                         Select: {
                             colorText: '#929292',

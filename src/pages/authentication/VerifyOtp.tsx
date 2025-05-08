@@ -50,8 +50,8 @@ const VerifyOtp = () => {
                                     style={{
                                         width: 300,
                                     }}
-                                    className=""
-                                    // variant="filled"
+                                    className="bg-[#212526]"
+                                    // variant="#212526"
                                     length={6}
                                 />
                             </Form.Item>

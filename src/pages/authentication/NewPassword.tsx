@@ -53,21 +53,30 @@ const NewPassword = () => {
                                 name="currentPassword"
                                 rules={[{ required: true, message: 'Please input new password!' }]}
                             >
-                                <Input.Password placeholder="Enter current password" className=" h-12 px-6 mt-2" />
+                                <Input.Password
+                                    placeholder="Enter current password"
+                                    className=" h-12 px-6 mt-2 bg-[#212526] border border-[#b8b8b8]"
+                                />
                             </Form.Item>
                             <span className="text-[#B8B8B8] text-xl">New Password</span>
                             <Form.Item
                                 name="newPassword"
                                 rules={[{ required: true, message: 'Please input new password!' }]}
                             >
-                                <Input.Password placeholder="Enter new password" className=" h-12 px-6 mt-2" />
+                                <Input.Password
+                                    placeholder="Enter new password"
+                                    className=" h-12 px-6 mt-2 bg-[#212526] border border-[#b8b8b8]"
+                                />
                             </Form.Item>
                             <span className="text-[#B8B8B8] text-xl">Confirm Password</span>
                             <Form.Item
                                 name="confirmPassword"
                                 rules={[{ required: true, message: 'Please input confirm password!' }]}
                             >
-                                <Input.Password placeholder="Enter confirm password" className="h-12 px-6 mt-2" />
+                                <Input.Password
+                                    placeholder="Enter confirm password"
+                                    className=" h-12 px-6 mt-2 bg-[#212526] border border-[#b8b8b8]"
+                                />
                             </Form.Item>
 
                             <Button

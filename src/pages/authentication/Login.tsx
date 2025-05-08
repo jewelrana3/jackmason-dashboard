@@ -18,18 +18,9 @@ const Login = () => {
             theme={{
                 token: {
                     colorPrimary: '#FBB040',
-
-                    colorBgContainer: '#F1F4F9',
                 },
                 components: {
-                    Input: {
-                        borderRadius: 10,
-                        colorBorder: '#757575',
-                        colorPrimaryBorder: 'transparent',
-                        // hoverBorderColor: 'transparent',
-                        // controlOutline: 'none',
-                        activeBorderColor: '#757575',
-                    },
+                    Input: {},
                     Button: {
                         colorPrimaryHover: 'rgb(0,0,0)',
                     },
@@ -56,13 +47,16 @@ const Login = () => {
                             <Input
                                 placeholder="Enter your email address"
                                 type="email"
-                                className=" h-12  px-6 bg-white mt-2"
+                                className=" h-12 px-6 mt-2 bg-[#212526] border border-[#b8b8b8]"
                             />
                         </Form.Item>
 
                         <span className="text-[#B8B8B8] text-xl">Password</span>
                         <Form.Item name="password" rules={[{ required: true, message: 'Please input your Password!' }]}>
-                            <Input.Password placeholder="Enter your password" className=" h-12  px-6 bg-white mt-2" />
+                            <Input.Password
+                                placeholder="Enter your password"
+                                className=" h-12  px-6 bg-[#212526] mt-2"
+                            />
                         </Form.Item>
 
                         <div className="flex items-center justify-between mb-4">

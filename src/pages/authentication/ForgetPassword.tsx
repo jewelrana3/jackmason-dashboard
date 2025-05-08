@@ -47,7 +47,7 @@ const ForgetPassword = () => {
                                 <Input
                                     placeholder="Enter your email address"
                                     type="email"
-                                    className="h-12 bg-white mt-2"
+                                    className="h-12 bg-[#212526] mt-2"
                                 />
                             </Form.Item>
 
