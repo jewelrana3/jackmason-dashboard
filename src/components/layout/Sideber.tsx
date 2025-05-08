@@ -43,7 +43,7 @@ const Sidebar = () => {
         navigate('/login');
     };
     return (
-        <div className="h-screen" style={{ backgroundColor: '#212526', fontFamily: 'Poppins' }}>
+        <div className="h-screen" style={{ backgroundColor: '#212526', fontFamily: 'Nunito' }}>
             <div className="flex items-center justify-center p-3 cursor-pointer" onClick={() => setActiveMenu('/')}>
                 <img src={logo} alt="Logo" className="w-32" />
             </div>

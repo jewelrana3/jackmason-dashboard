@@ -18,6 +18,7 @@ import User from '../pages/dashboard/user/User';
 import VenueList from '../pages/dashboard/venueList/VenueList';
 import Subscriber from '../pages/dashboard/subscriber/Subscriber';
 import FAQ from '../pages/dashboard/FAQ';
+import VenueDetail from '../pages/dashboard/venueList/VenueDetail';
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
             { path: 'category', element: <PostList /> },
             { path: 'subscriber', element: <Subscriber /> },
             { path: 'faq', element: <FAQ /> },
+            { path: 'venue-details', element: <VenueDetail /> },
 
             { path: 'about-us', element: <AboutUS /> },
             { path: 'privacy-policy', element: <PrivacyPolicy /> },

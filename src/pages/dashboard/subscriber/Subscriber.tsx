@@ -1,133 +1,41 @@
-import { Table } from 'antd';
-import type { TableColumnsType } from 'antd';
-import { MdOutlineRemoveRedEye } from 'react-icons/md';
-import { RiDeleteBinLine } from 'react-icons/ri';
-import Swal from 'sweetalert2';
+import { useState } from 'react';
 
-interface DataType {
-    key: React.Key;
-    no: string;
-    name: string;
-    jdate: string;
-    edate: string;
-    total?: string;
-    // status?: Activeng;
-}
-const data = [
-    {
-        key: '1',
-        no: '#2472',
-        name: 'Admin Asadujjaman',
-        jdate: '2-11-12',
-        edate: '9-3-25',
-
-        contentPrice: 'SYP 130,019,000',
-
-        status: 'Active',
-    },
-    {
-        key: '2',
-        no: '#2472',
-        name: 'Admin Asadujjaman',
-        jdate: '8-30-14',
-        edate: '9-3-25',
-
-        total: 'SYP 260,038,000',
-        status: 'Active',
-    },
-    {
-        key: '3',
-        no: '#2450',
-        name: 'Admin Asadujjaman',
-        jdate: '8-2-9',
-        edate: '9-3-25',
-
-        total: 'SYP 260,038,000',
-        status: 'Active',
-    },
-    {
-        key: '4',
-        no: '#2450',
-        name: 'Dr. Anna KOWALSKA',
-        jdate: '8-16-13',
-        edate: '9-3-25',
-
-        total: 'SYP 260,038,000',
-        status: 'Active',
-    },
-];
+import Premium from './Premium';
+import StandCard from './StandCard';
+import SubscribeEditModal from '../../../modal/SubscribeEditModal';
 
 export default function Subscriber() {
-    const columns: TableColumnsType<DataType> = [
-        {
-            title: 'Serial ID',
-            dataIndex: 'no',
-        },
-        {
-            title: 'User Name',
-            dataIndex: 'name',
-            key: 'name',
-        },
-        {
-            title: 'Status',
-            dataIndex: 'status',
-            key: 'status',
-        },
-        {
-            title: 'Joining Date',
-            dataIndex: 'jdate',
-            key: 'jdate',
-        },
-        {
-            title: 'Expire Date',
-
-            dataIndex: 'edate',
-            key: 'edate',
-        },
-
-        {
-            title: 'Action',
-            dataIndex: 'action',
-            key: 'action',
-            render: (_: any, record: DataType) => (
-                <div className="flex justify-center items-center gap-2 -ml-24" key={record.no}>
-                    <button className="mt-1">
-                        <MdOutlineRemoveRedEye size={22} className="text-[#6CA0DC]" />
-                    </button>
-
-                    <button className="mt-1" onClick={handleDelete}>
-                        <RiDeleteBinLine size={22} className="text-red-400" />
+    const [add, setAdd] = useState<boolean | null>(null);
+    return (
+        <>
+            <div className="text-[#B8B8B8E5] flex justify-between items-center">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#FFD858] to-[#FF954E] bg-clip-text text-transparent">
+                    Subscription Plans
+                </h1>
+                <div className="text-xl font-bold  flex items-center gap-2 bg-[#212526] p-3 rounded-lg">
+                    {/* <span className="flex items-center gap-2">
+                        <img src={editL} alt="edit" />
+                    </span> */}
+                    <button
+                        className="bg-transparent text-transparent bg-gradient-to-r from-[#FFD858] to-[#FF954E] bg-clip-text"
+                        onClick={() => setAdd(true)}
+                    >
+                        Add Subscription
                     </button>
                 </div>
-            ),
-        },
-    ];
+            </div>
 
-    const handleDelete = () => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: 'Deleted!',
-                    text: 'Your file has been deleted.',
-                    icon: 'success',
-                });
-            }
-        });
-    };
+            <div className="flex justify-between">
+                <div className="">
+                    <StandCard />
+                </div>
+                <div className="">
+                    <Premium />
+                </div>
+            </div>
 
-    return (
-        <div className=" rounded-lg">
-            {/* <SearchCategory /> */}
-            {/* Table with Checkbox Selection */}
-            <Table columns={columns} dataSource={data} rowKey={(record) => `${record.key}`} />
-        </div>
+            {/* modal show */}
+            {add && <SubscribeEditModal isOpen={add} onClose={() => setAdd(null)} />}
+        </>
     );
 }

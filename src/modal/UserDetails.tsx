@@ -1,5 +1,4 @@
-import { IoCloseSharp } from 'react-icons/io5';
-
+import Modal from './Modal';
 interface UserDetailProps {
     isOpen: boolean;
     onClose: () => void;
@@ -20,13 +19,10 @@ const UserDetail = ({ isOpen, onClose }: UserDetailProps) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-[#212526] p-6 rounded-xl text-[#B8B8B8E5] w-[30%]">
-                <div className="flex justify-between items-center">
+        <Modal isOpen={isOpen} onClose={onClose}>
+            <div className="bg-[#212526] p-6 rounded-xl text-[#B8B8B8E5] ">
+                <div className="flex justify-between items-center -mt-2">
                     <h2 className="text-xl font-semibold">User List Details</h2>
-                    <button className="text-xl font-bold text-gray-400 hover:text-white" onClick={onClose}>
-                        <IoCloseSharp />
-                    </button>
                 </div>
                 <div className="mt-4">
                     {userData.map((user) => (
@@ -56,7 +52,7 @@ const UserDetail = ({ isOpen, onClose }: UserDetailProps) => {
                     ))}
                 </div>
             </div>
-        </div>
+        </Modal>
     );
 };
 

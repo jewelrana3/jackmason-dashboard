@@ -1,6 +1,7 @@
 import { Table } from 'antd';
 import type { TableColumnsType } from 'antd';
 import { MdOutlineRemoveRedEye } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 interface DataType {
     key: React.Key;
@@ -133,6 +134,7 @@ const data = [
 ];
 
 export default function VenueList() {
+    const navigate = useNavigate();
     const columns: TableColumnsType<DataType> = [
         {
             title: 'Serial ID',
@@ -172,7 +174,7 @@ export default function VenueList() {
             key: 'action',
             render: (_: any, record: DataType) => (
                 <div className="flex justify-center items-center gap-2 -ml-8" key={record.no}>
-                    <button className="mt-1">
+                    <button className="mt-1" onClick={() => navigate('/venue-details')}>
                         <MdOutlineRemoveRedEye size={22} className="text-[#6CA0DC]" />
                     </button>
                 </div>
@@ -182,8 +184,6 @@ export default function VenueList() {
 
     return (
         <div className="rounded-lg">
-            {/* <SearchCategory /> */}
-            {/* Table with Checkbox Selection */}
             <Table columns={columns} dataSource={data} rowKey={(record) => `${record.key} `} />
         </div>
     );

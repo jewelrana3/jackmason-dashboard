@@ -12,11 +12,11 @@ function App() {
                     },
                     components: {
                         Input: {
-                            colorText: '#ffff',
-                            hoverBorderColor: '#212526',
+                            colorText: '#B8B8B8E5',
+                            hoverBorderColor: 'white',
                             activeBorderColor: '#212526',
+                            activeBg: '',
                             hoverBg: '#212526',
-                            activeBg: '#212526',
                         },
                         Table: {
                             headerColor: '#B8B8B8',
@@ -29,12 +29,9 @@ function App() {
                             fontFamily: 'Poppins',
                         },
                         Select: {
-                            colorBgContainer: '#212526',
-                            hoverBorderColor: '',
-                            activeBorderColor: '',
-                            // fontSize: 16,
-                            fontWeightStrong: 600,
                             colorText: '#929292',
+                            colorTextPlaceholder: '#B8B8B8E5',
+                            selectorBg: '',
                         },
 
                         Switch: {
