@@ -9,6 +9,7 @@ function App() {
                 theme={{
                     token: {
                         colorPrimary: '#FBB040',
+                        fontFamily: 'Nunito',
                     },
                     components: {
                         Input: {

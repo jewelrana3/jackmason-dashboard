@@ -42,7 +42,7 @@ const VerifyOtp = () => {
                             onFinish={onFinish}
                         >
                             <Form.Item
-                                className="flex items-center justify-center mx-auto "
+                                className="flex items-center justify-center mx-auto input"
                                 name="otp"
                                 rules={[{ required: true, message: 'Please input otp code here!' }]}
                             >
@@ -50,8 +50,8 @@ const VerifyOtp = () => {
                                     style={{
                                         width: 300,
                                     }}
-                                    className="bg-[#212526]"
-                                    // variant="#212526"
+                                    className=""
+                                    // variant="filled"
                                     length={6}
                                 />
                             </Form.Item>
@@ -64,9 +64,7 @@ const VerifyOtp = () => {
                             </Button>
 
                             <div className="text-lg flex items-center justify-between gap-2 mb-8 text-[#B8B8B8] px-4">
-                                <p style={{ fontFamily: 'Poppins' }} className="">
-                                    Didn't receive the code?
-                                </p>
+                                <p className="">Didn't receive the code?</p>
                                 <p
                                     className="text-[#79CAA1] font-semibold underline cursor-pointer"
                                     // onClick={handleResendCode}
