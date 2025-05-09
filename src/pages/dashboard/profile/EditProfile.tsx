@@ -1,6 +1,7 @@
 import { Form, Input, Avatar } from 'antd';
 import { BiUpload } from 'react-icons/bi';
 import Button from '../../../components/shared/Button';
+import { useEffect, useRef } from 'react';
 
 interface formValues {
     name: string;
@@ -36,6 +37,7 @@ export default function EditProfile() {
                     <div className="flex gap-4">
                         <div>
                             <Avatar
+                                onClick={() => document.getElementById('file')?.click()}
                                 className="border border-white"
                                 size={100}
                                 src="https://i.ibb.co.com/2YWbmYtm/df96ee07b3ad8cfad69be782cb4a27ca.jpg"
@@ -54,7 +56,7 @@ export default function EditProfile() {
                                     className="hidden"
                                 />
 
-                                <div className="w-[28px] h-[28px] flex items-center justify-center rounded-full cursor-pointer absolute -ml-36 mt-4 bg-slate-400 text-white">
+                                <div className="w-[28px] h-[28px] flex items-center justify-center rounded-full cursor-pointer absolute -ml-36 mt-5 bg-slate-400 text-white">
                                     <BiUpload size={20} onClick={() => document.getElementById('file')?.click()} />
                                 </div>
                             </div>
