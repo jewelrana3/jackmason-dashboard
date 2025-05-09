@@ -17,7 +17,7 @@ export default function EditProfile() {
         console.log(values);
     };
 
-    const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleImageChange = () => {
         // const file = e.target.files?.[0];
         // //@ts-ignore
         // setSelectedImage(file);

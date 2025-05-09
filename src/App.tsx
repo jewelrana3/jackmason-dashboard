@@ -17,6 +17,7 @@ function App() {
                             activeBorderColor: '#212526',
                             activeBg: '#212526',
                             hoverBg: '#212526',
+                            colorBgContainer: '#212526',
                         },
                         Table: {
                             headerColor: '#B8B8B8',

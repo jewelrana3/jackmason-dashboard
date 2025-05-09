@@ -40,7 +40,7 @@ export default function Chart() {
                         <h1>Service Provider</h1>
                     </div>
                     <div>
-                        <Select value={selectedYear} onChange={handleYearChange} className="w-32 h-[30px] bg-black">
+                        <Select value={selectedYear} onChange={handleYearChange} className="w-32 h-[30px] ">
                             <Option value="2025">2025</Option>
                             <Option value="2026">2026</Option>
                             <Option value="2027">2027</Option>

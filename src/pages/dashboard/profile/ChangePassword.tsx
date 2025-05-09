@@ -55,7 +55,7 @@ export default function ChangePassword() {
                             >
                                 <Input.Password
                                     placeholder="Enter your password"
-                                    className="h-12 bg-[#212526] placeholder:text-[#B8B8B8E5] rounded-xl border-none mt-1"
+                                    className="h-12 bg-[#212526]  rounded-xl border-none mt-1"
                                 />
                             </Form.Item>
 
@@ -70,7 +70,7 @@ export default function ChangePassword() {
                                 ]}
                             >
                                 <Input.Password
-                                    className="h-12 bg-[#212526] placeholder:text-[#B8B8B8E5] rounded-xl border-none mt-1"
+                                    className="h-12 bg-[#212526]  rounded-xl border-none mt-1"
                                     placeholder="Enter your password"
                                 />
                             </Form.Item>
@@ -93,7 +93,7 @@ export default function ChangePassword() {
                                         htmlType="submit"
                                         className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black font-bold text-lg px-6  rounded-full transform transition-all duration-300 ease-in-out 0.5s ease hover:from-orange-400 w-full mt-4 "
                                     >
-                                        Save & Change
+                                        Submit
                                     </Button>
                                 </ConfigProvider>
                             </Form.Item>
