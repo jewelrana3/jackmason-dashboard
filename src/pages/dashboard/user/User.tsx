@@ -131,7 +131,7 @@ export default function User() {
             key: 'name',
         },
         {
-            title: 'Category',
+            title: 'Occupation',
             dataIndex: 'address',
             key: 'address',
         },

@@ -37,7 +37,7 @@ export default function Chart() {
                     </div>
                     <div className="text-[#8DB501] flex justify-center items-center gap-2">
                         <p className="h-3 w-3 bg-[#8DB501] rounded-full"></p>
-                        <h1>Service Provider</h1>
+                        <h1>Venues</h1>
                     </div>
                     <div>
                         <Select value={selectedYear} onChange={handleYearChange} className="w-32 h-[30px] ">

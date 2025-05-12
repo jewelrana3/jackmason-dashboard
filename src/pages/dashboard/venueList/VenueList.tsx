@@ -146,7 +146,7 @@ export default function VenueList() {
             key: 'name',
         },
         {
-            title: 'Event Name',
+            title: 'Venue Name',
             dataIndex: 'address',
             key: 'address',
         },

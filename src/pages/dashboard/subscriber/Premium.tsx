@@ -43,7 +43,7 @@ export default function Premium() {
                             </button>
                         </div>
                         <div className="text-center mt-8">
-                            <span className="text-2xl font-medium text-[#FEFEFE]">50 AED</span>
+                            <span className="text-2xl font-medium text-[#FEFEFE]">100 AED</span>
                             <p className="text-sm text-gray-400">/ Per Month</p>
                         </div>
                         <div className="mt-6 space-y-3 text-[#B8B8B8]">

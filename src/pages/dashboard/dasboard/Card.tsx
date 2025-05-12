@@ -12,7 +12,7 @@ const data = [
     },
     {
         icon: <img src={service} alt="total" />,
-        title: 'Total Post',
+        title: 'Total Bookings',
         date: '13 NOV, 2024',
         count: '820',
         total: 'S109558',
