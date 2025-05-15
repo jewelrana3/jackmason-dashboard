@@ -31,11 +31,7 @@ export default function Profile() {
                 <div className="flex items-center justify-between gap-4  mt-12">
                     <div className="flex items-center gap-4">
                         <div className="relative">
-                            <Avatar
-                                size={100}
-                                src="https://i.ibb.co.com/2YWbmYtm/df96ee07b3ad8cfad69be782cb4a27ca.jpg"
-                                className="border-2 border-[#8AC2FF]"
-                            />
+                            <Avatar size={100} src="/user.svg" className="border-2 border-[#8AC2FF]" />
                         </div>
 
                         <div>

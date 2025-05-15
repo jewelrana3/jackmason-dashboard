@@ -56,7 +56,11 @@ const Sidebar = () => {
                     return (
                         <div
                             key={item.path}
-                            className={pathname === item.path ? 'bg-[#FFB953] rounded-r-lg w-[4%] text-nowrap' : ''}
+                            className={
+                                pathname === item.path
+                                    ? 'bg-[#FFB953] rounded-r-lg w-[2%] text-nowrap transition-transform'
+                                    : ''
+                            }
                         >
                             <Link className={`flex items-center gap-4  p-6 py-2`} to={item.path}>
                                 <span>{item.icon}</span>

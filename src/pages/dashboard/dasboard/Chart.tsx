@@ -53,23 +53,23 @@ export default function Chart() {
             </div>
             <ResponsiveContainer width="100%" height={260}>
                 <BarChart
-                    width={10}
+                    width={20}
                     height={300}
                     data={data}
-                    margin={{
-                        top: 5,
-                        right: 10,
-                        left: 10,
-                        bottom: 5,
-                    }}
+                    // margin={{
+                    //     top: 5,
+                    //     right: 10,
+                    //     left: 10,
+                    //     bottom: 5,
+                    // }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="pv" fill="#B8B8B8" />
-                    <Bar dataKey="uv" fill="#8DB501" />
+                    <Bar dataKey="pv" fill="#B8B8B8" barSize={10} radius={[10, 10, 0, 0]} />
+                    <Bar dataKey="uv" fill="#8DB501" barSize={10} radius={[10, 10, 0, 0]} />
                 </BarChart>
             </ResponsiveContainer>
         </div>
