@@ -1,7 +1,6 @@
 import { Form, Input, Avatar } from 'antd';
 import { BiUpload } from 'react-icons/bi';
 import Button from '../../../components/shared/Button';
-import { useEffect, useRef } from 'react';
 
 interface formValues {
     name: string;
