@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import Premium from './Premium';
-import StandCard from './StandCard';
 import SubscribeEditModal from '../../../modal/SubscribeEditModal';
 
 export default function Subscriber() {
@@ -26,9 +25,6 @@ export default function Subscriber() {
             </div>
 
             <div className="flex justify-between">
-                <div className="">
-                    <StandCard />
-                </div>
                 <div className="">
                     <Premium />
                 </div>

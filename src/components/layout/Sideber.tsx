@@ -71,14 +71,14 @@ const Sidebar = () => {
                 })}
 
                 <div onClick={() => setIsSettingOpen(!isSettingOpen)} className="cursor-pointer">
-                    <div className="flex items-center ml-6 my-2 ">
-                        <div className="flex gap-3">
+                    <div className="flex items-center  ml-6 my-2 ">
+                        <div className="flex justify-around gap-3">
                             <span>
                                 <CiSettings size={26} />
                             </span>
                             <span> Setting</span>
                         </div>
-                        <div className="ml-28">
+                        <div className="ml-16">
                             {isSettingOpen ? <MdKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}
                         </div>
                     </div>
